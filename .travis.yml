@@ -17,3 +17,7 @@ before_install:
   - sudo gem install bundler
 
 script: bundle exec rspec spec
+
+addons:
+  code_climate:
+    repo_token: 495c653a664ee0f8d94acd821498d39571bb9b19550f13e0283fafc74f1b254

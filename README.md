@@ -1,5 +1,10 @@
 # XBuild
 
+[![CI Status](https://travis-ci.org/guidomb/xbuild.svg?branch=master)](https://travis-ci.org/guidomb/xbuild)
+[![Code Climate](https://codeclimate.com/github/guidomb/xbuild/badges/gpa.svg)](https://codeclimate.com/github/guidomb/xbuild)
+[![Test Coverage](https://codeclimate.com/github/guidomb/xbuild/badges/coverage.svg)](https://codeclimate.com/github/guidomb/xbuild)
+
+
 **XBuild** is a thin wrapper on top of `xcodebuild` and `xctool` that allows you to configure your favorite iOS & Mac build tool for your project.
 
 ## Installation
