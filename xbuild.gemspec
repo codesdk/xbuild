@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Xbuild::VERSION
   spec.authors       = ["Guido Marucci Blas"]
   spec.email         = ["guidomb@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A wrapper over xcodebuild and xctool }
+  spec.description   = %q{XBuild is a thin wrapper on top of xcodebuild and xctool that allows you to configure your favorite iOS & Mac build tool for your project.}
+  spec.homepage      = "https://github.com/guidomb/xbuild"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
