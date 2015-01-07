@@ -10,6 +10,10 @@ rvm:
   # OS X 10.9.0-10.9.2
   # TODO: currently unavailable: https://github.com/travis-ci/travis-ci/issues/2918
   # - 2.0.0-p247
-  - 2.1.0
-  - 2.2.0
+
+before_install:
+  # There is a bug in travis. When using system ruby, bundler is not
+  # installed and causes the default install action to fail.
+  - sudo gem install bundler
+
 script: bundle exec rspec spec
