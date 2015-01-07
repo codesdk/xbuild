@@ -24,6 +24,8 @@ Or install it yourself as:
 
     $ gem install xbuild
 
+It is recommended to install [xcpretty](https://github.com/supermarin/xcpretty#usage) to prettify `xcodebuild`'s output.
+
 ## Usage
 
       xbuild [OPTIONS] ACTION [WORKSPACE] [SCHEME]
