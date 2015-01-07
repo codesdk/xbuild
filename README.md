@@ -1,5 +1,6 @@
 # XBuild
 
+[![Gem Version](https://badge.fury.io/rb/xbuild.svg)](http://badge.fury.io/rb/xbuild)
 [![CI Status](https://travis-ci.org/guidomb/xbuild.svg?branch=master)](https://travis-ci.org/guidomb/xbuild)
 [![Code Climate](https://codeclimate.com/github/guidomb/xbuild/badges/gpa.svg)](https://codeclimate.com/github/guidomb/xbuild)
 [![Test Coverage](https://codeclimate.com/github/guidomb/xbuild/badges/coverage.svg)](https://codeclimate.com/github/guidomb/xbuild)
