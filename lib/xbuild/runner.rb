@@ -25,7 +25,7 @@ module XBuild
       }
     }
 
-    attr_reader :workspace, :scheme, :command_executor
+    attr_reader :workspace, :scheme, :command_executor, :action_arguments
 
     def initialize(workspace, scheme, opts = {})
       @workspace = workspace
@@ -35,6 +35,7 @@ module XBuild
       @verbose = opts[:verbose]
       @dry_run = opts[:dry_run]
       @xctool = opts[:xctool]
+      @action_arguments = opts[:action_arguments] || {}
       @command_executor = opts[:command_executor] || SystemCommandExecutor.new
     end
 
@@ -50,7 +51,7 @@ module XBuild
       success = false
       if valid_action?(action)
         options = default_base_options.merge(options)
-        arguments = DEFAULT_ACTION_ARGUMENTS.fetch(action, {}).merge(arguments)
+        arguments = merge_action_arguments(action, arguments)
         command = build_command(action, arguments, options)
         success = execute(command)
       else
@@ -74,6 +75,11 @@ module XBuild
     end
 
     private
+
+      def merge_action_arguments(action, arguments)
+        args = action_arguments.fetch(action, {}).merge(arguments)
+        DEFAULT_ACTION_ARGUMENTS.fetch(action, {}).merge(args)
+      end
 
       def build_command(action, arguments, options)
         options = to_options_string(options)

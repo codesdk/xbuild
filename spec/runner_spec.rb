@@ -58,6 +58,30 @@ describe XBuild::Runner do
             xbuild.run(action, arguments)
           end
 
+          context "when xbuild was initialized with arguments for the given action" do
+
+            let(:options) do
+              {
+                xctool: build_tool == "xctool",
+                command_executor: command_executor,
+                pretty: pretty,
+                dry_run: dry_run,
+                action_arguments: {
+                  action => {
+                    :foo => 4,
+                    :jaz => nil
+                  }
+                }
+              }
+            end
+
+            it "combines both arguments" do
+              expect(command_executor).to receive(:execute).with(match(/^.* #{action} .*-foo 1 -jaz -bar 2 -baz.*$/))
+              xbuild.run(action, arguments)
+            end
+
+          end
+
         end
 
         context "when options are present" do
