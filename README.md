@@ -43,7 +43,7 @@ It is recommended to install [xcpretty](https://github.com/supermarin/xcpretty#u
         -h, --help                    print help
 
 
-You can have a `.xbuild.yml` on the current working directory where you run `xbuild`
+You can have a `.xbuild.yml` on the current working directory where `xbuild`
 command is run. In this file you can configure the options, workspace and scheme. Here
 is an example:
 
