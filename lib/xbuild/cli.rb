@@ -25,7 +25,7 @@ module XBuild
             "Uses xctool instead of xcodebuild as the build tool.",
             argument_name: :xctool
 
-    parameter "ACTION", "The build action to be run."
+    parameter "ACTION", "The build action to be run. (#{Runner::ACTIONS.join("|")})"
     parameter "[WORKSPACE]", "Sets the project's workspace."
     parameter "[SCHEME]", "Sets the project's scheme."
 
