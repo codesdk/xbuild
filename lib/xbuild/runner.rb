@@ -8,6 +8,14 @@ module XBuild
 
   end
 
+  class StdOutLogger
+
+    def log(message)
+      puts message
+    end
+
+  end
+
   class Runner
 
     ACTIONS = %w(
@@ -25,7 +33,7 @@ module XBuild
       }
     }
 
-    attr_reader :workspace, :scheme, :command_executor, :action_arguments
+    attr_reader :workspace, :scheme, :command_executor, :action_arguments, :logger
 
     def initialize(workspace, scheme, opts = {})
       @workspace = workspace
@@ -37,6 +45,7 @@ module XBuild
       @xctool = opts[:xctool]
       @action_arguments = opts[:action_arguments] || {}
       @command_executor = opts[:command_executor] || SystemCommandExecutor.new
+      @logger = opts[:logger] || StdOutLogger.new
     end
 
     def xctool?
@@ -107,7 +116,7 @@ module XBuild
       end
 
       def log(message)
-        puts "#{self.class}: #{message}" if verbose?
+        logger.log "#{self.class}: #{message}" if verbose?
       end
 
       def default_base_options
